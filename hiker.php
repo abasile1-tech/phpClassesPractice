@@ -2,7 +2,7 @@
 	class Hiker {
 		private $stamina;
 		private $hydration;
-		private $skill;
+		protected $skill;
 
 		function __construct($stamina,$hydration,$skill) {
 			$this->stamina = $stamina;
@@ -37,7 +37,16 @@
 		}
 	}
 
+	/**
+	 * Always ultramega experienced
+	 */
 	class UltraMegaHiker extends UltraHiker {
+		/**
+		 * overriding the constructor
+		 */
+		function __construct($stamina,$hydration) {
+			$this->skill = "ultramega experienced";
+		}
 		/**
 		 * overriding beUltra
 		 */
@@ -60,6 +69,6 @@
 
 	echo("The new hiker is " . $ultraMan->getSkill() . "." . " He says '" . $ultraMan->beUltra() . "'\n");
 
-	$ultraMegaMan = new UltraMegaHiker("ultramega high","ultramega high", "ultramega experienced");
+	$ultraMegaMan = new UltraMegaHiker("ultramega high","ultramega high");
 
-	echo("An even newer hiker has appeared and says '" . $ultraMegaMan->beUltra() . "'\n");
+	echo("An even newer hiker who is " . $ultraMegaMan->getSkill() . " has appeared and says '" . $ultraMegaMan->beUltra() . "'\n");
