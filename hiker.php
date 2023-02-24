@@ -31,6 +31,12 @@
 		}
 	}
 
+	class UltraHiker extends Hiker {
+		function beUltra() {
+			return "I am ultra.";
+		}
+	}
+
 	$mysteriousMan = new Hiker("high","high","experienced");
 
 	echo("It is a new day and the hiker has a " . $mysteriousMan->getStamina() . " stamina and a " . $mysteriousMan->getHydration() . " hydration.\n");
@@ -38,4 +44,8 @@
 	$mysteriousMan->setStamina("medium");
 	$mysteriousMan->setHydration("low");
 
-	echo("Hours have past and the hiker has a " . $mysteriousMan->getStamina() . " stamina and a " . $mysteriousMan->getHydration() . " hydration.");
+	echo("Hours have past and the hiker has a " . $mysteriousMan->getStamina() . " stamina and a " . $mysteriousMan->getHydration() . " hydration.\n");
+
+	$ultraMan = new UltraHiker("ultra high","ultra high","ultra experienced");
+
+	echo("The new hiker is " . $ultraMan->getSkill() . "." . " He says '" . $ultraMan->beUltra() . "'");
