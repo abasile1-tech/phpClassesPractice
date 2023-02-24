@@ -54,6 +54,13 @@
 		{
 			return "I am ultramega. I am the best of the best.";
 		}
+		/**
+		 * overriding setSkill to avoid changing for the best of the best!
+		 */
+		function setSkill($skill)
+		{
+			echo("\nMy skill is ultramega and cannot be changed!\n");
+		}
 	}
 
 	$mysteriousMan = new Hiker("high","high","experienced");
@@ -72,3 +79,8 @@
 	$ultraMegaMan = new UltraMegaHiker("ultramega high","ultramega high");
 
 	echo("An even newer hiker who is " . $ultraMegaMan->getSkill() . " has appeared and says '" . $ultraMegaMan->beUltra() . "'\n");
+
+	// attempting to set the skill of ultraMegaMan to "low" just won't work ha ha
+	// He is ultraMegaMan and his skill is always ultramega experienced!
+	$ultraMegaMan->setSkill("barely experienced");
+	echo("ultraMegaMan is still " . $ultraMegaMan->getSkill());
