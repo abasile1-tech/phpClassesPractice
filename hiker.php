@@ -61,6 +61,9 @@
 		{
 			echo("\nMy skill is ultramega and cannot be changed!\n");
 		}
+		static function saySomething($input) {
+			echo("Here is what you put: " . $input);
+		}
 	}
 
 	$mysteriousMan = new Hiker("high","high","experienced");
@@ -83,4 +86,7 @@
 	// attempting to set the skill of ultraMegaMan to "low" just won't work ha ha
 	// He is ultraMegaMan and his skill is always ultramega experienced!
 	$ultraMegaMan->setSkill("barely experienced");
-	echo("ultraMegaMan is still " . $ultraMegaMan->getSkill());
+	echo("ultraMegaMan is still " . $ultraMegaMan->getSkill() . "\n");
+	// trying out a static method without creating an instance of the class
+	UltraMegaHiker::saySomething("funny funny funny stuff");
+	
