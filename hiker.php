@@ -37,6 +37,16 @@
 		}
 	}
 
+	class UltraMegaHiker extends UltraHiker {
+		/**
+		 * overriding beUltra
+		 */
+		function beUltra()
+		{
+			return "I am ultramega. I am the best of the best.";
+		}
+	}
+
 	$mysteriousMan = new Hiker("high","high","experienced");
 
 	echo("It is a new day and the hiker has a " . $mysteriousMan->getStamina() . " stamina and a " . $mysteriousMan->getHydration() . " hydration.\n");
@@ -48,4 +58,8 @@
 
 	$ultraMan = new UltraHiker("ultra high","ultra high","ultra experienced");
 
-	echo("The new hiker is " . $ultraMan->getSkill() . "." . " He says '" . $ultraMan->beUltra() . "'");
+	echo("The new hiker is " . $ultraMan->getSkill() . "." . " He says '" . $ultraMan->beUltra() . "'\n");
+
+	$ultraMegaMan = new UltraMegaHiker("ultramega high","ultramega high", "ultramega experienced");
+
+	echo("An even newer hiker has appeared and says '" . $ultraMegaMan->beUltra() . "'\n");
