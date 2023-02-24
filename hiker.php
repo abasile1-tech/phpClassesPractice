@@ -1,8 +1,8 @@
 <?php
 	class Hiker {
-		public $stamina;
-		public $hydration;
-		public $skill;
+		private $stamina;
+		private $hydration;
+		private $skill;
 
 		function __construct($stamina,$hydration,$skill) {
 			$this->stamina = $stamina;
