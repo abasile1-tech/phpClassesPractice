@@ -4,6 +4,12 @@
 		public $hydration;
 		public $skill;
 
+		function __construct($stamina,$hydration,$skill) {
+			$this->stamina = $stamina;
+			$this->hydration = $hydration;
+			$this->skill = $skill;
+		}
+
 		function getStamina() {
 			return $this->stamina;
 		}
@@ -25,9 +31,11 @@
 		}
 	}
 
-	$mysteriousMan = new Hiker;
-	$mysteriousMan->setStamina("high");
-	$mysteriousMan->setHydration("low");
-	$mysteriousMan->setSkill("experienced");
+	$mysteriousMan = new Hiker("high","high","experienced");
 
-	echo("The hiker has a " . $mysteriousMan->getStamina() . " stamina.");
+	echo("It is a new day and the hiker has a " . $mysteriousMan->getStamina() . " stamina and a " . $mysteriousMan->getHydration() . " hydration.\n");
+
+	$mysteriousMan->setStamina("medium");
+	$mysteriousMan->setHydration("low");
+
+	echo("Hours have past and the hiker has a " . $mysteriousMan->getStamina() . " stamina and a " . $mysteriousMan->getHydration() . " hydration.");
